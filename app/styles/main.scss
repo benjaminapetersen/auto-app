@@ -1,0 +1,18 @@
+// bower:scss
+// endbower
+html,
+body {
+  background: #eaeaea;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+[ng-view] {
+  background: #fafafa;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
