@@ -2,9 +2,11 @@
 'use strict';
 
 angular.module('auto', [
-    // angular
+    // angular core libs
     'ngRoute',
-    // modules
+    // vendor libs
+    'ngMaterial',
+    // app modules
     'auto.dashboard',
     'auto.tasks',
     'auto.vehicles',
@@ -22,5 +24,13 @@ angular.module('auto', [
 				redirectTo: '/dashboard'
 			});
 	}
-]);
-
+])
+// .config([
+//     '$mdThemingProvider',
+//     function($mdThemingProvider) {
+//       $mdThemingProvider.theme('default')
+//             .primaryPalette('grey')
+//             .accentPalette('blue');
+//     }   
+// ])
+;
