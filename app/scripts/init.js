@@ -6,6 +6,7 @@ angular.module('auto', [
     'ngRoute',
     // vendor libs
     'ngMaterial',
+    'pubsub',
     // app modules
     'auto.dashboard',
     'auto.tasks',

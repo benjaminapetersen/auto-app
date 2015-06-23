@@ -6,6 +6,8 @@
     "modernizr": "~2.8.2",
     "angular-material": "~0.9.8",
     "angular-route": "~1.4.0",
-    "material-design-icons": "~2.0.0"
+    "material-design-icons": "~2.0.0",
+    "ang-pub-sub": "git://github.com/benjaminapetersen/angular-simple-pubsub.git",
+    "lodash": "~3.9.3"
   }
 }

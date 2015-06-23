@@ -51,12 +51,14 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- my bower libs -->
+    <script src="bower_components/ang-pub-sub/pubsub.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -71,8 +73,11 @@
     </script>
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <!-- init -->
         <script src="scripts/init.js"></script>
         <script src="scripts/env.js"></script>
+        <!-- main module -->
+        <script src="scripts/main/directives/auto-toolbar.js"></script>
         <!-- dashboard module -->
         <script src="scripts/dashboard/routes.js"></script>
         <script src="scripts/dashboard/controllers/dashboard.js"></script>
