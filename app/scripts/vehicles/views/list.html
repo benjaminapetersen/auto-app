@@ -4,35 +4,26 @@
 		title="Vehicles List" 
 		more="true"><!-- add icons here --></auto-toolbar>
 
-	<md-list>
-		<md-list-item>
+	<md-list scrollable flex>
+		<md-list-item 
+			ng-repeat="item in items" id="vehicle-{{$index}}">
 			<md-button>
-				<md-icon md-font-library="material-icons" class="md-avatar">directions_car</md-icon>
+				<md-icon 
+					md-font-library="material-icons" 
+					class="md-avatar">directions_car</md-icon>
 			</md-button>
-			<p class="md-list-item-text">
-				<a ng-href="#/vehicles/1234">Vehicle #1</a>
-			</p>
-			<md-divider></md-divider>
+			<div>
+				<p class="md-list-item-text">
+					<a ng-href="#/vehicles/{{item.id}}">
+						{{item.make}} {{item.model}} {{item.style}}
+					</a>
+				</p>
+				<p>color: {{item.color}}, 
+					miles: {{item.mileage[0].miles}}</p>
+
+				<md-divider></md-divider>
+			</div>
 		</md-list-item>
-		<md-list-item>
-			<md-button>
-				<md-icon md-font-library="material-icons" class="md-avatar">directions_car</md-icon>
-			</md-button>
-			<p class="md-list-item-text">
-				<a ng-href="#/vehicles/4567">Vehicle #2</a>
-			</p>
-			<md-divider></md-divider>
-		</md-list-item>
-		<md-list-item>
-			<md-button>
-				<md-icon md-font-library="material-icons" class="md-avatar">directions_car</md-icon>
-			</md-button>
-			<p class="md-list-item-text">
-				<a ng-href="#/vehicles/7890">Vehicle #3</a>
-			</p>
-			<md-divider></md-divider>
-		</md-list-item>
-		
 	</md-list>
 
 </div>

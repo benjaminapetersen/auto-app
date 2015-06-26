@@ -13,15 +13,22 @@ angular.module('auto.vehicles')
 			// - extended info should be added in a detail interface
 			// - ensure initial car input is as simple as possible
 			var vehicleExample = {
-				year: '',	
-				make: '', 				// Honda, Toyota, etc
-				model: '',				// Civic, Sienna, etc
-				style: '', 				// CE, LE, XLE, etc
-				color: '',
-				vin: '',				// not needed, but handy to have!
-				license_plate: '',
-				miles: [
-					{amt: '19000', date: 1434923102956}
+				id: Date.now(),
+				year: '2008',	
+				make: 'Toyota', 				// Honda, Toyota, etc
+				model: 'Sienna',				// Civic, Sienna, etc
+				style: 'LE',	 				// CE, LE, XLE, etc
+				color: 'Silver',
+				vin: 'xxx-xxx-xxx-xxx',			// not needed, but handy to have!
+				license_plate: '123-ABC',
+				mileage: [
+					// simulate 1 entry per week
+					// TODO: this should be a separate service
+					// to get the mileage entries for a car
+					{miles: '87654', date: 1435279255222},
+					{miles: '87431', date: 1435278650422},
+					{miles: '86750', date: 1435278045622},
+					{miles: '85901', date: 1435277440822}
 				], 						
 				// typical sellable components to a car...
 				features: ['ac', 'power windows', 'cruise control', 'am/fm radio', 'cd', 'mp3', 'etc'],
@@ -33,7 +40,7 @@ angular.module('auto.vehicles')
 					braking: '' 		// ABS, etc
 				}
 			}
-
+ 
 
 			// for prototyping, simply using CRUD as an API model
 			// this will probably not work long term, as the vehicles
@@ -51,6 +58,16 @@ angular.module('auto.vehicles')
 				},
 				delete: function(vid) {
 
+				},
+				getAll: function() {
+					// simulate an http request by returning a 
+					// promise for an array of 10 cars, which 
+					// are all replicas of the above car.
+					return $.when(_.times(15, function() {
+						var vehicle = _.cloneDeep(vehicleExample);
+						vehicle.id++;
+						return vehicle;
+					}));
 				}
 			}
 		}

@@ -8,9 +8,11 @@ angular.module('auto.vehicles')
 		function($log, $scope, vehicles) {
 			$log.log('/vehicles/');
 
-			vehicles.read();
-			
-			angular.extend($scope, {
-				// pass to view
-			});
+			vehicles.getAll()
+					.then(function(items) {
+						console.log('vehicles', items);
+						angular.extend($scope, {
+							items: items
+						});
+					});
 		}]);
