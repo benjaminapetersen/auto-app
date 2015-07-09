@@ -13,7 +13,7 @@ angular.module('auto.vehicles')
 			// - extended info should be added in a detail interface
 			// - ensure initial car input is as simple as possible
 			var vehicleExample = {
-				id: Date.now(),
+				id: 100,
 				year: '2008',	
 				make: 'Toyota', 				// Honda, Toyota, etc
 				model: 'Sienna',				// Civic, Sienna, etc
@@ -39,7 +39,13 @@ angular.module('auto.vehicles')
 					drivetrain: '',  	// FWD, AWD, etc
 					braking: '' 		// ABS, etc
 				}
-			}
+			};
+
+			var vehicles = _.times(15, function() {
+						var vehicle = _.cloneDeep(vehicleExample);
+						vehicle.id = _.uniqueId('vehicle_');
+						return vehicle;
+					});
  
 
 			// for prototyping, simply using CRUD as an API model
@@ -63,11 +69,15 @@ angular.module('auto.vehicles')
 					// simulate an http request by returning a 
 					// promise for an array of 10 cars, which 
 					// are all replicas of the above car.
-					return $.when(_.times(15, function() {
-						var vehicle = _.cloneDeep(vehicleExample);
-						vehicle.id++;
-						return vehicle;
+					return $.when(vehicles);
+				},
+				get: function(vid) { 
+					return $.when(_.find(vehicles, function(vehicle) {
+						return vehicle.id == vid;
 					}));
+
+					// _.find(collection, [predicate=_.identity], [thisArg])
+					// (_.find(users, function(chr) {return chr.age < 40;}), 'user');
 				}
 			}
 		}
