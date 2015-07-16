@@ -1,15 +1,15 @@
 <div layout="column" height-full>
-	
-	<auto-toolbar 
-		title="Vehicles List" 
+
+	<auto-toolbar
+		title="Vehicles List"
 		more="true"><!-- add icons here --></auto-toolbar>
 
 	<md-list scrollable flex>
-		<md-list-item 
+		<md-list-item
 			ng-repeat="item in items" id="vehicle-{{$index}}">
 			<md-button>
-				<md-icon 
-					md-font-library="material-icons" 
+				<md-icon
+					md-font-library="material-icons"
 					class="md-avatar">directions_car</md-icon>
 			</md-button>
 			<div>
@@ -18,7 +18,7 @@
 						{{item.make}} {{item.model}} {{item.style}}
 					</a>
 				</p>
-				<p>color: {{item.color}}, 
+				<p>color: {{item.color}},
 					miles: {{item.mileage[0].miles}}</p>
 
 				<md-divider></md-divider>
