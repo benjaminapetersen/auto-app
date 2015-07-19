@@ -1,1 +1,38 @@
-<p>Login</p>
+<div layout="column" height-full>
+
+  <auto-toolbar
+    title="Login"
+    more="true"><!-- add icons here --></auto-toolbar>
+
+  <md-content flex layout-padding layout="column" layout-sm="column">
+
+  <p>Have an account?</p>
+
+  <form name="login">
+    <md-input-container>
+      <label>Username</label>
+      <input ng-model="user.username">
+    </md-input-container>
+
+    <md-input-container>
+      <label>Password</label>
+      <input ng-model="user.password">
+    </md-input-container>
+
+    <md-button
+      ng-click="actions.login()"
+      class="md-raised md-primary">Login</md-button>
+
+  </form>
+
+  <div>
+    <p>
+      <a ng-href="#/signup">
+        I don't have an account.
+      </a>
+    </p>
+  </div>
+
+  </md-content>
+
+</div>

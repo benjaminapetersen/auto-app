@@ -13,5 +13,9 @@ angular.module('auto.auth', [])
           templateUrl: 'scripts/auth/views/logout.html',
           controller: 'auto.auth.logout'
         })
+        .when('/signup', {
+          templateUrl: 'scripts/auth/views/signup.html',
+          controller: 'auto.auth.signup'
+        })
     }
   ]);
