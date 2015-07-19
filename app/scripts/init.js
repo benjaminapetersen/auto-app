@@ -9,6 +9,7 @@ angular.module('auto', [
     'ngMaterial',
     'pubsub',
     // app modules
+    'auto.auth',
     'auto.dashboard',
     'auto.tasks',
     'auto.vehicles',
@@ -23,7 +24,7 @@ angular.module('auto', [
 	function($routeProvider) {
 		$routeProvider
 			.when('/', {
-				redirectTo: '/dashboard'
+				redirectTo: '/login'
 			});
 	}
 ])
@@ -33,6 +34,6 @@ angular.module('auto', [
 //       $mdThemingProvider.theme('default')
 //             .primaryPalette('grey')
 //             .accentPalette('blue');
-//     }   
+//     }
 // ])
 ;
