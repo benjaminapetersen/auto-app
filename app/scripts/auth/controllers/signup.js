@@ -5,20 +5,30 @@ angular.module('auto.auth')
     '$log',
     '$location',
     '$scope',
-    function($log, $location, $scope) {
+    'auth',
+    function($log, $location, $scope, auth) {
       $log.log('/signup');
 
-      var user = {
-        username: '',
-        email: '',
-        password: ''
-      }
+      var newUser = {
+            // for now, we don't really care about the name...
+            name: {
+              first: '',
+              last: ''
+            },
+            username: undefined,
+            email: undefined,
+            password: undefined
+          }
 
       angular.extend($scope, {
-        user: user,
+        user: newUser,
         actions: {
-          signup: function() {
-            console.log('Signup', user);
+          create: function() {
+            auth.signup(newUser)
+                .then(function(user) {
+                  console.log('signup success:', user);
+                  $location.path('/dashboard');
+                });
           }
         }
       });

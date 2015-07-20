@@ -16,6 +16,6 @@ angular.module('auto.auth', [])
         .when('/signup', {
           templateUrl: 'scripts/auth/views/signup.html',
           controller: 'auto.auth.signup'
-        })
+        });
     }
   ]);

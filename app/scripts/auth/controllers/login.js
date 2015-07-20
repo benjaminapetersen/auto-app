@@ -8,18 +8,28 @@ angular.module('auto.auth')
     function($log, $location, $scope) {
       $log.log('/login');
 
-      var user = {
+      var newUser = {
         username: '',
+        email: '',
         password: ''
       }
 
       angular.extend($scope, {
-        user: user,
+        user: newUser,
         actions: {
           login: function() {
-            console.log('Do login!', user);
+            auth.login(newUser)
+                .then(function(user) {
+                  console.log('lgoin success:', user);
+                  $location.path('/dashboard');
+                });
           }
         }
       });
     }
   ]);
+
+
+
+
+
