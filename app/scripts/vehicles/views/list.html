@@ -7,7 +7,7 @@
 	<md-list scrollable flex>
 		<md-list-item
 			ng-repeat="item in items" id="vehicle-{{$index}}">
-			<md-button>
+			<md-button ng-href="#/vehicles/{{item.id}}">
 				<md-icon
 					md-font-library="material-icons"
 					class="md-avatar">directions_car</md-icon>
@@ -19,7 +19,11 @@
 					</a>
 				</p>
 				<p>color: {{item.color}},
-					miles: {{item.mileage[0].miles}}</p>
+					miles: {{item.mileage[0].miles}}
+					<md-button href="#/vehicles/{{item.id}}/edit" class="md-raised">
+						edit vehicle
+					</md-button>
+				</p>
 
 				<md-divider></md-divider>
 			</div>

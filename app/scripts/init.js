@@ -8,6 +8,7 @@ angular.module('auto', [
     // vendor libs
     'ngMaterial',
     'pubsub',
+    'promise-for-storage',
     // app modules
     'auto.dashboard',
     'auto.tasks',
@@ -33,6 +34,6 @@ angular.module('auto', [
 //       $mdThemingProvider.theme('default')
 //             .primaryPalette('grey')
 //             .accentPalette('blue');
-//     }   
+//     }
 // ])
 ;

@@ -1,1 +1,11 @@
-<div>Edit a single vehicle</div>
+<div layout="column" height-full>
+
+  <auto-toolbar
+    title="Edit a Vehicle"
+    more="true"><!-- add icons here --></auto-toolbar>
+
+    <div ng-include="'scripts/vehicles/views/_form.html'"></div>
+
+    <md-button ng-click="update()" class="md-raised md-primary">Save</md-button>
+
+</div>

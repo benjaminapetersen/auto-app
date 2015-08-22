@@ -2,12 +2,22 @@
 
 angular.module('auto.vehicles')
 	.controller('auto.vehicles.vehicle.edit', [
+		'$location',
 		'$log',
 		'$scope',
-		function($log, $scope) {
+		'$routeParams',
+    'vehicles',
+		function($location, $log, $scope, $routeParams, vehicles) {
 			$log.log('/vehicles/:vid/edit');
 
-			angular.extend($scope, {
-				// pass to view
+		vehicles
+			.get($routeParams.vid)
+			.then(function(vehicle) {
+				console.log("vehicle make is", vehicle.make);
+				angular.extend($scope, {
+
+					vehicle: vehicle
+				})
 			});
+
 		}]);

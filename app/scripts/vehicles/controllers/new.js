@@ -5,11 +5,11 @@
 // I guess this line refers to the vehicles.js file,
 angular.module('auto.vehicles')
 	.controller('auto.vehicles.vehicle.new', [
+    '$location',
 		'$log',
 		'$scope',
     'vehicles',
-
-		function($log, $scope, vehicles) {
+		function($location, $log, $scope, vehicles) {
 			$log.log('/vehicles/new');
 
 
@@ -27,7 +27,13 @@ angular.module('auto.vehicles')
 
 				create: function() {
 
-          vehicles.create(vehicle);
+          vehicle.id = Date.now();
+          vehicles
+            .create(vehicle)
+            .then(function() {
+              $location.path("/vehicles")
+            });
+
 
         }
 

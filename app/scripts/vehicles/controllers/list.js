@@ -8,7 +8,7 @@ angular.module('auto.vehicles')
 		function($log, $scope, vehicles) {
 			$log.log('/vehicles/');
 
-			vehicles.getAll()
+			vehicles.all()
 					.then(function(items) {
 						console.log('vehicles', items);
 						angular.extend($scope, {
