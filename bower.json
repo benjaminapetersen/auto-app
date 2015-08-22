@@ -9,7 +9,7 @@
     "material-design-icons": "~2.0.0",
     "ang-pub-sub": "git://github.com/benjaminapetersen/angular-simple-pubsub.git",
     "angular-promise-for-storage": "git://github.com/benjaminapetersen/angular-promise-for-storage.git",
-    "lodash": "~3.10.3"
+    "lodash": "~3.10.1"
   },
   "overrides": {
     "ang-pub-sub": {
