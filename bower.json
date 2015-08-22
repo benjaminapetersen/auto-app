@@ -8,7 +8,8 @@
     "angular-route": "~1.4.0",
     "material-design-icons": "~2.0.0",
     "ang-pub-sub": "git://github.com/benjaminapetersen/angular-simple-pubsub.git",
-    "lodash": "~3.9.3"
+    "angular-promise-for-storage": "git://github.com/benjaminapetersen/angular-promise-for-storage.git",
+    "lodash": "~3.10.3"
   },
   "overrides": {
     "ang-pub-sub": {
