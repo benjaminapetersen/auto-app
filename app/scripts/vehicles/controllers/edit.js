@@ -15,8 +15,17 @@ angular.module('auto.vehicles')
 			.then(function(vehicle) {
 				console.log("vehicle make is", vehicle.make);
 				angular.extend($scope, {
+					vehicle: vehicle,
+					update: function() {
 
-					vehicle: vehicle
+						vehicles
+							.update(vehicle)
+							.then(function() {
+								$location.path("/vehicles")
+							});
+					}
+
+					// vehicle.updated_at = Date.now();
 				})
 			});
 

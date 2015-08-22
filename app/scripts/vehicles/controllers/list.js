@@ -9,10 +9,14 @@ angular.module('auto.vehicles')
 			$log.log('/vehicles/');
 
 			vehicles.all()
-					.then(function(items) {
-						console.log('vehicles', items);
+					.then(function(vehicles) {
+						console.log('vehicles', vehicles);
 						angular.extend($scope, {
-							items: items
+							vehicles: vehicles
 						});
 					});
 		}]);
+
+
+x.function() = RESULT
+	then(function(RESULT) {sdkgndskng})

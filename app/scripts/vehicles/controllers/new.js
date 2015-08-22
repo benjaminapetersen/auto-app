@@ -28,6 +28,7 @@ angular.module('auto.vehicles')
 				create: function() {
 
           vehicle.id = Date.now();
+          vehicle.created_at = Date.now();
           vehicles
             .create(vehicle)
             .then(function() {
