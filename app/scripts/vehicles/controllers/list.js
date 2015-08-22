@@ -18,5 +18,3 @@ angular.module('auto.vehicles')
 		}]);
 
 
-x.function() = RESULT
-	then(function(RESULT) {sdkgndskng})
