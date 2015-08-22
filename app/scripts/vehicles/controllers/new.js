@@ -33,8 +33,6 @@ angular.module('auto.vehicles')
             .then(function() {
               $location.path("/vehicles")
             });
-
-
         }
 
 			});
