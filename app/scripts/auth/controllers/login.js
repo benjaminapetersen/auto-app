@@ -5,7 +5,8 @@ angular.module('auto.auth')
     '$log',
     '$location',
     '$scope',
-    function($log, $location, $scope) {
+    'auth',
+    function($log, $location, $scope, auth) {
       $log.log('/login');
 
       var newUser = {
